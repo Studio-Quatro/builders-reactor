@@ -1,24 +1,13 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Versions
 
-Things you may want to cover:
+- Ruby 3.1
+- Rails 7.0.3
 
-* Ruby version
+## Instructions to run locally
 
-* System dependencies
+- Bundle dependencies.
+- Create database with rails db:create.
+- Run migrations with rails db:migrate.
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
