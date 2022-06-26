@@ -11,3 +11,6 @@
 - Create database with rails db:create.
 - Run migrations with rails db:migrate.
 
+## Deploy
+
+- Copy master.key
