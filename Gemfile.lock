@@ -136,8 +136,6 @@ GEM
     nio4r (2.5.8)
     nokogiri (1.13.6-arm64-darwin)
       racc (~> 1.4)
-    nokogiri (1.13.6-x86_64-linux)
-      racc (~> 1.4)
     parallel (1.22.1)
     parser (3.1.2.0)
       ast (~> 2.4.1)
@@ -220,7 +218,7 @@ GEM
     rubocop-performance (1.14.2)
       rubocop (>= 1.7.0, < 2.0)
       rubocop-ast (>= 0.4.0)
-    rubocop-rails (2.15.0)
+    rubocop-rails (2.15.1)
       activesupport (>= 4.2.0)
       rack (>= 1.1)
       rubocop (>= 1.7.0, < 2.0)
@@ -281,7 +279,6 @@ GEM
 
 PLATFORMS
   arm64-darwin-20
-  x86_64-linux
 
 DEPENDENCIES
   bootsnap
