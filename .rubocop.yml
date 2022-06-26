@@ -18,6 +18,7 @@ AllCops:
     - db/schema.rb
     - 'vendor/**/*'
     - db/migrate/*
+    - Gemfile
 
 Rails:
   Enabled: true
