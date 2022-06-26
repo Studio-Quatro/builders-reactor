@@ -58,6 +58,7 @@ group :development, :test do
   gem "rspec-rails"
   gem "rubocop-rails"
   gem "rubocop-rails_config"
+  gem "rubocop-discourse"
 end
 
 group :development do
