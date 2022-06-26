@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-# require 'spec_helper'
+require 'rails_helper'
 
-RSpec.describe(BuildersWorld::Connect) do
+RSpec.describe(BuildersWorld::Connect, type: :service) do
   context 'when connection was succesful' do
     it 'returns a Woocommerce object'
   end

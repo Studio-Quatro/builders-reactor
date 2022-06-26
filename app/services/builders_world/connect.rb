@@ -17,7 +17,13 @@ module BuildersWorld
           version: 'wc/v1'
         }
       )
-      Rails.logger.debug(woocommerce)
+      #Rails.logger.debug(woocommerce)
+      #woocommerce.get("products/categories").parsed_response
+      woocommerce.get("products?per_page=99&page=1").parsed_response
+      woocommerce.get("products?per_page=99&page=2").parsed_response
+      woocommerce.get("products?per_page=99&page=3").parsed_response
+      woocommerce.get("products?per_page=99&page=4").parsed_response
+      # Until response == []
     end
   end
 end
