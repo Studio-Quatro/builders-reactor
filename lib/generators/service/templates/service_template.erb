@@ -1,0 +1,20 @@
+# frozen_string_literal: true
+
+<% spaces = ''; for mod in @modules %><%= spaces %>module <%= mod.camelize %><% spaces += '  ' %>
+<% end %><%= spaces %># Replace this line with documentation for this service.
+<%= spaces %># @param [Hash] params
+<%= spaces %># @option params [Type] :name_of_param Description of param.
+<%= spaces %>class <%= "#{class_name}" %> < ApplicationService
+
+<%= spaces %>  def initialize(params)
+<%= spaces %>    @params = params
+<%= spaces %>  end
+<% if methods.present? %><% for method in methods %>
+<%= spaces %>  def <%= method %>; end<% end %>
+<% else %>
+<%= spaces %>  # @return Replace with return.
+<%= spaces %>  def call; end
+<% end %>
+<%= spaces %>end
+<% @modules.count.times do %><% spaces = spaces.chop.chop %><%= spaces %>end
+<% end %>
