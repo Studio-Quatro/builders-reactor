@@ -3,10 +3,11 @@
 require 'rails_helper'
 
 RSpec.describe(BuildersWorld::ProductsDownloader, type: :service) do
-  describe '#call' do
+  describe '#call', :vcr do
     context 'when the parameters are correct' do
-      xit 'returns a list of products' do
-        expect(described_class.call.class).to eq(Array)
+      it 'returns a list of products' do
+        connection = BuildersWorld::Connect.call
+        expect(described_class.call({ connection: }).class).to eq(Array)
       end
     end
 
