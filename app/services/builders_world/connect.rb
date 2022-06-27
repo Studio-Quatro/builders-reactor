@@ -7,11 +7,17 @@ module BuildersWorld
   # You could build a connection using something like these:
   #   builders_world_website = BuildersWorld::Connect.new.call
   class Connect
+    def initialize(params)
+      @params = params
+      @params[:domain] ||= CREDENTIALS.domain
+      @params[:consumer_key] ||= CREDENTIALS.consumer_key
+      @params[:consumer_secret] ||= CREDENTIALS.consumer_secret
+    end
     def call
       @connector = WooCommerce::API.new(
-        CREDENTIALS.domain,
-        CREDENTIALS.consumer_key,
-        CREDENTIALS.consumer_secret,
+        @params[:domain],
+        @params[:consumer_key],
+        @params[:consumer_secret],
         {
           wp_api: true,
           version: 'wc/v1'
