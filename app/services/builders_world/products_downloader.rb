@@ -6,6 +6,7 @@ module BuildersWorld
   # @option params [WooCommerce object] :connection WooCommerce object.
   class ProductsDownloader < ApplicationService
     def initialize(params)
+      super()
       @website = params[:connection]
       @products_list = []
     end
@@ -29,7 +30,7 @@ module BuildersWorld
         @products_list << current_products_page
         break if current_products_page.empty?
 
-        Rails.logger.debug("Downloading from page #{current_page}.")
+        Rails.logger.debug { "Downloading from page #{current_page}." }
         current_page += 1
       end
     end

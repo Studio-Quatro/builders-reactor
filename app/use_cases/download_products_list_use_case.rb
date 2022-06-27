@@ -3,7 +3,7 @@
 # Replace this line with documentation for this use case.
 # @param [Hash] params
 # @option params [Type] :name_of_param Description of param.
-class DownloadProductsListUseCase
+class DownloadProductsListUseCase < ApplicationUseCase
   # @return Replace with return.
   def call
     connect_with_webpage
@@ -11,20 +11,17 @@ class DownloadProductsListUseCase
     # save_temp_file
   end
 
-  private 
-  
+  private
+
   def connect_with_webpage
-    @connection = BuildersWorld::Connect.call()
+    @connection = BuildersWorld::Connect.call
   end
 
   def retrieve_products
-    BuildersWorld::ProductsDownloader.call({
-      connection: @connection
-    })
+    BuildersWorld::ProductsDownloader.call({ connection: @connection })
   end
 
-  def save_temp_file 
+  def save_temp_file
     # PENDING
   end
 end
-
