@@ -6,8 +6,9 @@ module BuildersWorld
   # Class to connect Woocommerce shop from BuildersWorld website
   # You could build a connection using something like these:
   #   builders_world_website = BuildersWorld::Connect.new.call
-  class Connect
-    def initialize(params)
+  class Connect < ApplicationService
+    def initialize(params = {})
+      super()
       @params = params
       @params[:domain] ||= CREDENTIALS.domain
       @params[:consumer_key] ||= CREDENTIALS.consumer_key
@@ -24,13 +25,6 @@ module BuildersWorld
           version: 'wc/v1'
         }
       )
-      # Rails.logger.debug(woocommerce)
-      # woocommerce.get("products/categories").parsed_response
-      # woocommerce.get('products?per_page=99&page=1').parsed_response
-      # woocommerce.get('products?per_page=99&page=2').parsed_response
-      # woocommerce.get('products?per_page=99&page=3').parsed_response
-      # woocommerce.get('products?per_page=99&page=4').parsed_response
-      # Until response == []
     end
   end
 end
