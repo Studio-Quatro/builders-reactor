@@ -13,10 +13,8 @@
 <%= spaces %>  def <%= method %>; end<% end %>
 <% else %>
 <%= spaces %>  # @return Replace with return.
-<%= spaces %>  def call
-<%= spaces %>    # Insert pre-conditions here.
-<%= spaces %>    # Insert post-conditions here.
-<%= spaces %>  end
+<%= spaces %>  def call; end
 <% end %>
 <% @modules.count.times do %><% spaces = spaces.chop.chop %><%= spaces %>end
 <% end %>
+end
