@@ -13,6 +13,7 @@ module BuildersWorld
       @params[:consumer_key] ||= CREDENTIALS.consumer_key
       @params[:consumer_secret] ||= CREDENTIALS.consumer_secret
     end
+
     def call
       @connector = WooCommerce::API.new(
         @params[:domain],
