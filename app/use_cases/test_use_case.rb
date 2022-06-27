@@ -4,7 +4,6 @@
 # @param [Hash] params
 # @option params [Type] :name_of_param Description of param.
 class TestUseCase
-
   def initialize(params)
     @params = params
   end
@@ -14,7 +13,4 @@ class TestUseCase
     # Insert pre-conditions here.
     # Insert post-conditions here.
   end
-
-  
-  end
-
+end
