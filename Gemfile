@@ -33,3 +33,7 @@ group :development, :test do
   gem 'webmock'
   gem 'guard'
 end
+
+group :test do
+    gem "nyan-cat-formatter"
+end

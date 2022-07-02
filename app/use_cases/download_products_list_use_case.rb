@@ -6,7 +6,7 @@ require './lib/utils/file_persistor'
 class DownloadProductsListUseCase < ApplicationUseCase
   # @return Hash with info of file.
   def call
-    @start_time = Time.zone.now
+    start_timer
     connect_with_webpage
     retrieve_products
     save_temp_file
@@ -14,6 +14,14 @@ class DownloadProductsListUseCase < ApplicationUseCase
   end
 
   private
+
+  def start_timer
+    @start_time = now
+  end
+
+  def now
+    Time.zone.now
+  end
 
   def connect_with_webpage
     @connection = BuildersWorld::Connect.call
@@ -24,16 +32,15 @@ class DownloadProductsListUseCase < ApplicationUseCase
   end
 
   def save_temp_file
-    @path = Rails.root.join('tmp', 'builders_products_list')
-    @file_size = Utils::FilePersistor.new.save(@path, @products_list)
+    @file_size = Utils::FilePersistor.new.save('builders_products_list', @products_list)
   end
 
   def response
     {
       file_size: @file_size,
-      file_path: @path,
-      date: Time.zone.now,
-      elapsed_time: Time.zone.now - @start_time
+      file_path: '/tmp/builders_products_list',
+      date: now,
+      elapsed_time: now - @start_time
     }
   end
 end

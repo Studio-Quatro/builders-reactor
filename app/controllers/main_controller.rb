@@ -10,6 +10,6 @@ class MainController < ApplicationController
   end
 
   def download_products_list
-    render(plain: Rails.root.join('tmp', 'builders_products_list').open.read)
+    render(plain: Rails.root.join('tmp/builders_products_list').open.read)
   end
 end
