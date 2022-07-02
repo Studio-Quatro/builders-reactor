@@ -1,14 +1,16 @@
 # frozen_string_literal: true
 
-# Replace this line with documentation for this use case.
-# @param [Hash] params
-# @option params [Type] :name_of_param Description of param.
+require './lib/utils/file_persistor'
+# This use case download products from BuildersWorld website ApplicationRecord
+#   and saves a file ready to parse and persist on database.
 class DownloadProductsListUseCase < ApplicationUseCase
-  # @return Replace with return.
+  # @return Hash with info of file.
   def call
+    @start_time = Time.now
     connect_with_webpage
     retrieve_products
-    # save_temp_file
+    save_temp_file
+    return response
   end
 
   private
@@ -18,10 +20,20 @@ class DownloadProductsListUseCase < ApplicationUseCase
   end
 
   def retrieve_products
-    BuildersWorld::ProductsDownloader.call({ connection: @connection })
+    @products_list = BuildersWorld::ProductsDownloader.call({ connection: @connection })
   end
 
   def save_temp_file
-    # PENDING
+    @path = Rails.root.join('tmp', 'builders_products_list')
+    @file_size = Utils::FilePersistor.new.save(@path, @products_list)
+  end
+
+  def response
+    {
+      file_size: @file_size,
+      file_path: @path,
+      date: Time.now,
+      elapsed_time: Time.now - @start_time
+    }
   end
 end

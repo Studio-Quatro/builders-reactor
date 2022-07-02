@@ -67,6 +67,7 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'vcr'
   gem 'webmock'
+  gem 'guard'
 end
 
 group :development do
