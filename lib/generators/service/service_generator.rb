@@ -22,7 +22,7 @@ class ServiceGenerator < Rails::Generators::NamedBase
 
     class_generator_path = "#{generator_folder}#{use_spec_subfolder}/#{file_name}.rb"
     specs_generator_path = "#{specs_folder}#{use_spec_subfolder}/#{file_name}_spec.rb"
-    FileUtils.mkpath(generator_folder) unless File.exist?(generator_folder)
+    FileUtils.mkdir_p(generator_folder)
     template('service_template.erb', class_generator_path)
     template('service_spec_template.erb', specs_generator_path)
   end

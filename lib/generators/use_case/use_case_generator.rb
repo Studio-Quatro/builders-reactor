@@ -22,7 +22,7 @@ class UseCaseGenerator < Rails::Generators::NamedBase
 
     class_generator_path = "#{generator_folder}#{use_spec_subfolder}/#{file_name}_use_case.rb"
     specs_generator_path = "#{specs_folder}#{use_spec_subfolder}/#{file_name}_use_case_spec.rb"
-    FileUtils.mkpath(generator_folder) unless File.exist?(generator_folder)
+    FileUtils.mkdir_p(generator_folder)
     template('use_case_template.erb', class_generator_path)
     template('use_case_spec_template.erb', specs_generator_path)
   end
