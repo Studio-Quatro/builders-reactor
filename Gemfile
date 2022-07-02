@@ -34,6 +34,3 @@ group :development, :test do
   gem 'guard'
 end
 
-group :test do
-    gem "nyan-cat-formatter"
-end
