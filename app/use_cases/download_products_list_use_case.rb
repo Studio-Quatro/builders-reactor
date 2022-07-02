@@ -6,11 +6,11 @@ require './lib/utils/file_persistor'
 class DownloadProductsListUseCase < ApplicationUseCase
   # @return Hash with info of file.
   def call
-    @start_time = Time.now
+    @start_time = Time.zone.now
     connect_with_webpage
     retrieve_products
     save_temp_file
-    return response
+    response
   end
 
   private
@@ -32,8 +32,8 @@ class DownloadProductsListUseCase < ApplicationUseCase
     {
       file_size: @file_size,
       file_path: @path,
-      date: Time.now,
-      elapsed_time: Time.now - @start_time
+      date: Time.zone.now,
+      elapsed_time: Time.zone.now - @start_time
     }
   end
 end

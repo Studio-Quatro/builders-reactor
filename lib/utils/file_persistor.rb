@@ -1,9 +1,9 @@
+# frozen_string_literal: true
+
 module Utils
   class FilePersistor
     def save(path, content)
-      File.open(path, "w+") do |f|
-        f.write(content)
-      end
+      File.write(path, content)
     end
   end
 end

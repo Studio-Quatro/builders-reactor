@@ -8,7 +8,8 @@ class MainController < ApplicationController
   def build_product_list
     @response = DownloadProductsListUseCase.new.call
   end
+
   def download_products_list
-    render plain: Rails.root.join('tmp', 'builders_products_list').open.read
+    render(plain: Rails.root.join('tmp', 'builders_products_list').open.read)
   end
 end
