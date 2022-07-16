@@ -5,7 +5,7 @@ CREDENTIALS = Rails.application.credentials.woocommerce
 module BuildersWorld
   # Class to connect Woocommerce shop from BuildersWorld website
   # You could build a connection using something like these:
-  #   builders_world_website = BuildersWorld::Connect.new.call
+  #   builders_world_website = BuildersWorld::Connect.call
   class Connect < ApplicationService
     def initialize(params = {})
       super()

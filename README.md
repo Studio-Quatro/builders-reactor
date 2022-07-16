@@ -14,3 +14,7 @@
 ## Deploy
 
 - Copy master.key
+
+## Gem to configure some cositas
+
+https://github.com/huacnlee/rails-settings-cached
