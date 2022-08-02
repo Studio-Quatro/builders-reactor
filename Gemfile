@@ -5,6 +5,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.1.0'
 
+gem 'activeresource'
 gem 'bootsnap', require: false
 gem 'sprockets-rails'
 gem 'pg', '~> 1.1'
@@ -34,3 +35,5 @@ group :development, :test do
   gem 'guard'
 end
 
+
+gem "rails-settings-cached", "~> 2.8"
