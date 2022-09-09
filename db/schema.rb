@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_09_023006) do
-
+ActiveRecord::Schema[7.0].define(version: 2022_09_09_113940) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -62,15 +61,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_09_023006) do
     t.index ["category_id"], name: "index_category_maps_on_category_id"
   end
 
-  create_table "category_maps", force: :cascade do |t|
-    t.string "bxa_id"
-    t.string "bw_id"
-    t.bigint "category_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["category_id"], name: "index_category_maps_on_category_id"
-  end
-
   create_table "items", force: :cascade do |t|
     t.string "category"
     t.string "cost_item_type"
@@ -86,6 +76,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_09_023006) do
     t.string "uom"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["external_id"], name: "index_items_on_external_id", unique: true
   end
 
   create_table "settings", force: :cascade do |t|
