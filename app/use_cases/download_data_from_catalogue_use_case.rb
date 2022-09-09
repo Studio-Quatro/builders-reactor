@@ -3,7 +3,6 @@
 require './lib/utils/file_persistor'
 
 class DownloadDataFromCatalogueUseCase < ApplicationUseCase
-
   def call
     start_time
     get_access_token
@@ -26,7 +25,7 @@ class DownloadDataFromCatalogueUseCase < ApplicationUseCase
   def get_catalogue_info
     @catalogue_id = Rails.application.credentials.dig(:buildxact, :catalogue_id)
   end
-  
+
   def get_all_catalogue_items
     @catalogue_items = []
     page = 0
@@ -37,13 +36,20 @@ class DownloadDataFromCatalogueUseCase < ApplicationUseCase
       @catalogue_items.concat(current_page)
       puts "Page #{page} done. From #{first_item} to #{last_item}. Total #{@catalogue_items.count}"
       break if current_page.count < 100
+
       page += 1
     end
   end
 
   def get_catalogue_items(from, to)
-    @all_catalogue_items = Buildxact::CatalogueItems.call({access_token: @access_token, catalogue_id: @catalogue_id,
-    from: , to: })
+    @all_catalogue_items = Buildxact::CatalogueItems.call(
+      {
+        access_token: @access_token,
+        catalogue_id: @catalogue_id,
+        from:,
+        to:
+      }
+    )
   end
 
   def save_temp_file

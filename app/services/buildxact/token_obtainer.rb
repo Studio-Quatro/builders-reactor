@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 CREDENTIALS = Rails.application.credentials.buildxact
-module Buildxact 
+module Buildxact
   # Class to connect to Buildxac website.
   # You can build a connection using something like these:
   #   buildxact_connection = Buildxact::Connect.call
