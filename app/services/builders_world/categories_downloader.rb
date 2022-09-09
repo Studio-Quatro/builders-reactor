@@ -16,27 +16,30 @@ module BuildersWorld
       build_list_of_categories
       map_categories
       update_categories
+
+      "{
+        'categories': #{@categories_list.count},
+        'status': 'success'
+}"
     end
 
     private
 
     def update_categories
-      Category.upsert_all @categories_list, unique_by: :wc_id
+      Category.upsert_all(@mapped_categories, unique_by: :wc_id)
     end
-
 
     def map_categories
-      @mapped_categories = @categories_list.map do |category|
-        {
-          wc_id: category['id'].to_i,
-          slug: category['slug'].to_s,
-          name: category['name'].to_s,
-          parent_id: category['parent'].to_i
-        }
-      end
+      @mapped_categories =
+        @categories_list.map do |category|
+          {
+            wc_id: category['id'].to_i,
+            slug: category['slug'].to_s,
+            name: category['name'].to_s,
+            parent_id: category['parent'].to_i
+          }
+        end
     end
-
-
 
     def get_categories_from_page(page)
       @website.get("products/categories?per_page=99&page=#{page}").parsed_response
@@ -55,4 +58,3 @@ module BuildersWorld
     end
   end
 end
-

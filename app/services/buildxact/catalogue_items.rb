@@ -18,11 +18,11 @@ module Buildxact
     attr_reader :access_token, :catalogue_id, :from, :to
 
     def get_catalogue_items
-      url = "https://api.buildxact.com/rest/catalogues/items/search?"
-      url += "catalogueIds=#{ catalogue_id }&"
-      url += "skip=#{ from }&"
-      url += "top=100#{ to }"
-      response = HTTParty.get(url, headers: { "Authorization" => "Bearer #{ access_token }" })
+      url = 'https://api.buildxact.com/rest/catalogues/items/search?'
+      url += "catalogueIds=#{catalogue_id}&"
+      url += "skip=#{from}&"
+      url += "top=100#{to}"
+      response = HTTParty.get(url, headers: { 'Authorization' => "Bearer #{access_token}" })
       response.parsed_response
     end
 
