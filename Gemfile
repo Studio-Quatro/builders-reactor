@@ -22,6 +22,8 @@ gem 'woocommerce_api'
 
 group :development, :test do
   gem 'brakeman'
+  gem 'pry-rails'
+  gem 'jazz_fingers'
   gem 'bundler-audit'
   gem 'debug', platforms: %i[mri mingw x64_mingw]
   gem 'rspec-rails'
@@ -33,6 +35,7 @@ group :development, :test do
   gem 'vcr'
   gem 'webmock'
   gem 'guard'
+  gem 'simplecov'
 end
 
 
