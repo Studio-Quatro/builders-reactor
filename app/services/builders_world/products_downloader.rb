@@ -13,7 +13,6 @@ module BuildersWorld
 
     # @return List of products or raise an error.
     def call
-      binding.pry
       build_list_of_products
       map_products
       update_products
@@ -27,22 +26,23 @@ module BuildersWorld
     private
 
     def map_products
-      @mapped_products = @products_list.map do |product|
-        {
-          external_id: product['id'],
-          description: product['name'],
-          category: product['categories'][-2]['id'],
-          sub_category: product['categories'][-1]['id'],
-          image_url: product['images'][0]['src'],
-          unit_cost: product['regular_price'],
-          uom: 'Each',
-          supplier_code: product['sku'],
-          is_recipe: false,
-          cost_item_type: 'Item',
-          #catalogue_category_id: find_map product['categories'][-2]['id'],
-          #catalogue_sub_category_id: find_map product['categories'][-1]['id']
-        }
-      end
+      @mapped_products =
+        @products_list.map do |product|
+          {
+            external_id: product['id'],
+            description: product['name'],
+            category: product['categories'][-2]['id'],
+            sub_category: product['categories'][-1]['id'],
+            image_url: product['images'][0]['src'],
+            unit_cost: product['regular_price'],
+            uom: 'Each',
+            supplier_code: product['sku'],
+            is_recipe: false,
+            cost_item_type: 'Item',
+            # catalogue_category_id: find_map product['categories'][-2]['id'],
+            # catalogue_sub_category_id: find_map product['categories'][-1]['id']
+          }
+        end
     end
 
     def update_products
@@ -50,9 +50,7 @@ module BuildersWorld
     end
 
     def get_products_from_page(page)
-      #@website.get("products?per_page=99&page=#{page}").parsed_response
-
-      @website.get("products?per_page=2&page=#{page}").parsed_response # Delete
+      @website.get("products?per_page=99&page=#{page}").parsed_response
     end
 
     def build_list_of_products
@@ -63,8 +61,7 @@ module BuildersWorld
         break if current_products_page.empty?
 
         Rails.logger.debug { "Downloading from page #{current_page}." }
-        #current_page += 1
-        current_page += 10000 # Delete
+        current_page += 1
       end
     end
   end
