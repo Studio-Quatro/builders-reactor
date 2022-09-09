@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2022-09-08T22:45:32-03:00">2022-09-08T22:45:32-03:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2022-09-09T00:58:58-03:00">2022-09-09T00:58:58-03:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -30,7 +30,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         3.65
+         3.5
        </span>
     </span> hits/line
     )
@@ -39,12 +39,12 @@
   <a name="AllFiles"></a>
 
   <div>
-    <b>13</b> files in total.
+    <b>15</b> files in total.
   </div>
 
   <div class="t-line-summary">
-    <b>100</b> relevant lines,
-    <span class="green"><b>100</b> lines covered</span> and
+    <b>106</b> relevant lines,
+    <span class="green"><b>106</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed. </span>
     (<span class="green">
   100.0%
@@ -84,9 +84,20 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#4a7a74616bf59007e3b4158fbc33708182fad3a2" class="src_link" title="app/models/category.rb">app/models/category.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">5</td>
+            <td class="cell--number">7</td>
+            <td class="cell--number">4</td>
+            <td class="cell--number">4</td>
+            <td class="cell--number">0</td>
+            <td class="cell--number">1.00</td>
+            
+          </tr>
+        
+          <tr class="t-file">
+            <td class="strong t-file__name"><a href="#307cf84193dfea3fbcdc53ccd832051bb06daa2a" class="src_link" title="app/models/category_map.rb">app/models/category_map.rb</a></td>
+            <td class="green strong cell--number t-file__coverage">100.00 %</td>
             <td class="cell--number">3</td>
-            <td class="cell--number">3</td>
+            <td class="cell--number">2</td>
+            <td class="cell--number">2</td>
             <td class="cell--number">0</td>
             <td class="cell--number">1.00</td>
             
@@ -164,6 +175,17 @@
             <td class="cell--number">11</td>
             <td class="cell--number">5</td>
             <td class="cell--number">5</td>
+            <td class="cell--number">0</td>
+            <td class="cell--number">1.00</td>
+            
+          </tr>
+        
+          <tr class="t-file">
+            <td class="strong t-file__name"><a href="#cdee8b27d000b3e77c1fe58bd54ad31a8e78a4f0" class="src_link" title="spec/models/category_spec.rb">spec/models/category_spec.rb</a></td>
+            <td class="green strong cell--number t-file__coverage">100.00 %</td>
+            <td class="cell--number">5</td>
+            <td class="cell--number">3</td>
+            <td class="cell--number">3</td>
             <td class="cell--number">0</td>
             <td class="cell--number">1.00</td>
             
@@ -330,8 +352,8 @@
     
 
     <div class="t-line-summary">
-      <b>3</b> relevant lines.
-      <span class="green"><b>3</b> lines covered</span> and
+      <b>4</b> relevant lines.
+      <span class="green"><b>4</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -388,6 +410,92 @@
       
         <div>
           <li class="never" data-hits="" data-linenumber="5">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="6">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  validates :wc_id, uniqueness: true</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="7">
+            
+            
+
+            
+
+            <code class="ruby">end</code>
+          </li>
+        </div>
+      
+    </ol>
+  </pre>
+</div>
+
+      
+        <div class="source_table" id="307cf84193dfea3fbcdc53ccd832051bb06daa2a">
+  <div class="header">
+    <h3>app/models/category_map.rb</h3>
+    <h4>
+      <span class="green">
+  100.0%
+</span>
+
+      lines covered
+    </h4>
+
+    
+
+    <div class="t-line-summary">
+      <b>2</b> relevant lines.
+      <span class="green"><b>2</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+
+    
+
+  </div>
+
+  <pre>
+    <ol>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="1">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">class CategoryMap &lt; ApplicationRecord</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="2">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  belongs_to :category</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="3">
             
             
 
@@ -2236,6 +2344,92 @@
 </div>
 
       
+        <div class="source_table" id="cdee8b27d000b3e77c1fe58bd54ad31a8e78a4f0">
+  <div class="header">
+    <h3>spec/models/category_spec.rb</h3>
+    <h4>
+      <span class="green">
+  100.0%
+</span>
+
+      lines covered
+    </h4>
+
+    
+
+    <div class="t-line-summary">
+      <b>3</b> relevant lines.
+      <span class="green"><b>3</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+
+    
+
+  </div>
+
+  <pre>
+    <ol>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="1">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">require &#39;rails_helper&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="2">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="3">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">RSpec.describe(Category, type: :model) do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="4">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  pending &quot;add some examples to (or delete) #{__FILE__}&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="5">
+            
+            
+
+            
+
+            <code class="ruby">end</code>
+          </li>
+        </div>
+      
+    </ol>
+  </pre>
+</div>
+
+      
         <div class="source_table" id="583505836c7d70233b5fbd69c91d55986883b2ce">
   <div class="header">
     <h3>spec/models/item_spec.rb</h3>
@@ -2291,7 +2485,7 @@
 
             
 
-            <code class="ruby">RSpec.describe Item, type: :model do</code>
+            <code class="ruby">RSpec.describe(Item, type: :model) do</code>
           </li>
         </div>
       

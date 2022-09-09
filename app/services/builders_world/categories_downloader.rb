@@ -20,7 +20,7 @@ module BuildersWorld
       "{
         'categories': #{@categories_list.count},
         'status': 'success'
-}"
+      }"
     end
 
     private
