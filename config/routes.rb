@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  get 'categories/index'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
@@ -10,4 +11,5 @@ Rails.application.routes.draw do
   get 'download_products_list', to: 'main#download_products_list'
   
   resources :products, only: [:index]
+  resources :categories, only: [:index]
 end

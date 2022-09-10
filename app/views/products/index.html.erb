@@ -23,19 +23,19 @@
             <tbody>
                 <% @products.each do |product| %>
                     <tr>
-                      <td><%= product.id %></td>
-                      <td><%= product.category %></td>
-                      <td><%= product.cost_item_type %></td>
-                      <td><%= product.description %></td>
-                      <td><%= product.catalogue_category_id %></td>
-                      <td><%= product.external_id %></td>
-                      <td><%= product.catalogue_sub_category_id %></td>
-                      <td><%= product.image_url %></td>
-                      <td><%= product.is_recipe %></td>
-                      <td><%= product.sub_category %></td>
-                      <td><%= product.supplier_code %></td>
-                      <td><%= product.unit_cost %></td>
-                      <td><%= product.uom %></td>
+                        <td class="border px-4 py-2"><%= product.id %></td>
+                        <td class="border px-4 py-2"><%= product.category %></td>
+                        <td class="border px-4 py-2"><%= product.cost_item_type %></td>
+                        <td class="border px-4 py-2"><%= product.description %></td>
+                        <td class="border px-4 py-2"><%= product.catalogue_category_id %></td>
+                        <td class="border px-4 py-2"><%= product.external_id %></td>
+                        <td class="border px-4 py-2"><%= product.catalogue_sub_category_id %></td>
+                        <td class="border px-4 py-2"><%= product.image_url %></td>
+                        <td class="border px-4 py-2"><%= product.is_recipe %></td>
+                        <td class="border px-4 py-2"><%= product.sub_category %></td>
+                        <td class="border px-4 py-2"><%= product.supplier_code %></td>
+                        <td class="border px-4 py-2"><%= product.unit_cost %></td>
+                        <td class="border px-4 py-2"><%= product.uom %></td>
                     </tr>
                 <% end %>
             </tbody>
