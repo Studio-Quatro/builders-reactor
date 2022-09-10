@@ -17,10 +17,10 @@ module BuildersWorld
       map_products
       update_products
 
-      "{
-      'status': 'success',
-      'message': 'Products updated successfully.'
-}"
+      {
+        'status': 'success',
+        'message': 'Products updated successfully.'
+      }
     end
 
     private
@@ -29,14 +29,14 @@ module BuildersWorld
       @mapped_products =
         @products_list.map do |product|
           {
-            external_id: product['id'],
-            description: product['name'],
-            category: product['categories'][-2]['id'],
-            sub_category: product['categories'][-1]['id'],
-            image_url: product['images'][0]['src'],
-            unit_cost: product['regular_price'],
-            uom: 'Each',
-            supplier_code: product['sku'],
+            external_id: product.dig('id'),
+            description: product.dig('name') || '',
+            category: product.dig('categories')[-2].dig('id') || product.dig('categories')[-1].dig('id') || '',
+            sub_category: product.dig('categories')[-1].dig('id') || '',
+            image_url: product.dig('images',0,'src') || '',
+            unit_cost: product.dig('regular_price') || 0,
+            #uom: 'Each',
+            supplier_code: product.dig('sku') || '',
             is_recipe: false,
             cost_item_type: 'Item',
             # catalogue_category_id: find_map product['categories'][-2]['id'],
@@ -46,7 +46,7 @@ module BuildersWorld
     end
 
     def update_products
-      Item.upsert_all(@mapped_products, unique_by: :external_id)
+      Item.upsert_all(@mapped_products.uniq, unique_by: :external_id)
     end
 
     def get_products_from_page(page)
