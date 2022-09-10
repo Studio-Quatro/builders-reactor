@@ -16,6 +16,7 @@ module BuildersWorld
       build_list_of_products
       map_products
       update_products
+      Setting.last_products_update = Time.now
 
       {
         'status': 'success',
