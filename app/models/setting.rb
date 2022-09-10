@@ -2,6 +2,8 @@
 class Setting < RailsSettings::Base
   cache_prefix { 'v1' }
   field :bxa_token
+  field :last_categories_update
+  field :last_products_update
   # Define your fields
   # field :host, type: :string, default: "http://localhost:3000"
   # field :default_locale, default: "en", type: :string

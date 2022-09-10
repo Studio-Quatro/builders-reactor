@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   # root "articles#index"
   root "main#index"
   get 'build_product_list', to: 'main#build_product_list'
+  get 'build_category_list', to: 'main#build_category_list'
   get 'download_products_list', to: 'main#download_products_list'
   
   resources :products, only: [:index]

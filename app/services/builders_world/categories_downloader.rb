@@ -16,11 +16,12 @@ module BuildersWorld
       build_list_of_categories
       map_categories
       update_categories
+      update_date_on_settings
 
-      "{
-        'categories': #{@categories_list.count},
-        'status': 'success'
-      }"
+      {
+        categories: @categories_list.count,
+        status: 'success'
+      }
     end
 
     private
@@ -55,6 +56,10 @@ module BuildersWorld
         Rails.logger.debug { "Downloading from page #{current_page}." }
         current_page += 1
       end
+    end
+
+    def update_date_on_settings
+      Setting.last_categories_update = Time.zone.now
     end
   end
 end
