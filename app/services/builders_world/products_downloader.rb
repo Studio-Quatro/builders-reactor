@@ -31,8 +31,8 @@ module BuildersWorld
           {
             external_id: product.dig('id'),
             description: product.dig('name') || '',
-            category: product.dig('categories')[-2].dig('id') || product.dig('categories')[-1].dig('id') || '',
-            sub_category: product.dig('categories')[-1].dig('id') || '',
+            category: product.dig('categories',-2,'id') || product.dig('categories',-1,'id') || '',
+            sub_category: product.dig('categories',-1,'id') || '',
             image_url: product.dig('images',0,'src') || '',
             unit_cost: product.dig('regular_price') || 0,
             #uom: 'Each',
