@@ -4,12 +4,14 @@
 class MainController < ApplicationController
   def index; end
 
-  # TODO: Delete endpoint. Only for development purposes.
+  # Enqueue a job to download products from WooCommerce
   def build_product_list
-    @response = DownloadProductsListUseCase.new.call
+    DownloadProductsListUseCase.new.call
   end
 
-  def download_products_list
-    render(plain: Rails.root.join('tmp/builders_products_list').open.read)
+  # Enqueue a job to download product categories from WooCommerce
+  def build_category_list
+    DownloadCategoriesListUseCase.new.call
   end
-end
+
+  end

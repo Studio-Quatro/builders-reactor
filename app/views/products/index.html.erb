@@ -1,0 +1,44 @@
+<!-- Make a tailwind container to show a long table -->
+<div class="container mx-auto">
+      
+        <!-- Make a table for products with fields: id, category, cost_item_type, description, catalogue_category_id, external_id, catalogue_sub_category_id, image_url is_recipe, sub_category, supplier_code, unit_cost and uom -->
+        <table class="table-fixed">
+            <thead>
+                <tr>
+                    <th class="px-4 py-2">id</th>
+                    <th class="px-4 py-2">category</th>
+                    <th class="px-4 py-2">cost_item_type</th>
+                    <th class="px-4 py-2">description</th>
+                    <th class="px-4 py-2">catalogue_category_id</th>
+                    <th class="px-4 py-2">external_id</th>
+                    <th class="px-4 py-2">catalogue_sub_category_id</th>
+                    <th class="px-4 py-2">image_url</th>
+                    <th class="px-4 py-2">is_recipe</th>
+                    <th class="px-4 py-2">sub_category</th>
+                    <th class="px-4 py-2">supplier_code</th>
+                    <th class="px-4 py-2">unit_cost</th>
+                    <th class="px-4 py-2">uom</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% @products.each do |product| %>
+                    <tr>
+                      <td><%= product.id %></td>
+                      <td><%= product.category %></td>
+                      <td><%= product.cost_item_type %></td>
+                      <td><%= product.description %></td>
+                      <td><%= product.catalogue_category_id %></td>
+                      <td><%= product.external_id %></td>
+                      <td><%= product.catalogue_sub_category_id %></td>
+                      <td><%= product.image_url %></td>
+                      <td><%= product.is_recipe %></td>
+                      <td><%= product.sub_category %></td>
+                      <td><%= product.supplier_code %></td>
+                      <td><%= product.unit_cost %></td>
+                      <td><%= product.uom %></td>
+                    </tr>
+                <% end %>
+            </tbody>
+        </table>
+
+</div>
