@@ -8,7 +8,7 @@ class DownloadDataFromCatalogueUseCase < ApplicationUseCase
     get_access_token
     get_catalogue_info
     get_all_catalogue_items
-    save_temp_file
+    #save_temp_file
     response
   end
 
@@ -52,9 +52,9 @@ class DownloadDataFromCatalogueUseCase < ApplicationUseCase
     )
   end
 
-  def save_temp_file
-    @file_size = Utils::FilePersistor.new.save('buildxact_catalogue', @all_catalogue_items)
-  end
+  #def save_temp_file
+    #@file_size = Utils::FilePersistor.new.save('buildxact_catalogue', @all_catalogue_items)
+  #end
 
   def elapsed_time
     @elapsed_time = Time.now - @start_time
@@ -62,8 +62,7 @@ class DownloadDataFromCatalogueUseCase < ApplicationUseCase
 
   def response
     {
-      file_size: @file_size,
-      # catalogue_items: @all_catalogue_items,
+      #file_size: @file_size,
       elapsed_time: @elapsed_time
     }
   end
