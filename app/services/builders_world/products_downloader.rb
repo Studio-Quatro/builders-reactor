@@ -1,9 +1,15 @@
 # frozen_string_literal: true
 
 module BuildersWorld
-  # Replace this line with documentation for this service.
+  # Download products from WooCommerce and persist it on database
   # @param [Hash] params
   # @option params [WooCommerce object] :connection WooCommerce object.
+  # @return [Hash] {success: true, message: 'Products downloaded successfully'}
+  # @return [Hash] raise StandardError if something goes wrong. This allows the job to retry.
+  # @example
+  #  BuildersWorld::ProductsDownloader.call({connection: BuildersWorld::Connect.call})
+  #  => {status: 'success', message: 'Products updated successfully'}
+  #  => StandardError
   class ProductsDownloader < ApplicationService
     def initialize(params)
       super()
