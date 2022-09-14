@@ -15,7 +15,8 @@ class MainController < ApplicationController
 
   # Enqueue a job to download product categories from WooCommerce
   def build_category_list
-    BuildersWorld::CategoriesDownloader.call({connection: BuildersWorld::Connect.call})
+    ObtainCategoriesFromBwJob.perform_later
+    render json: { message: 'Categories list is being built' }
   end
 
 end
