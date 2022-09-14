@@ -19,4 +19,7 @@ class MainController < ApplicationController
     render json: { message: 'Categories list is being built. This process could take some time... Please, do not retry the action.' }
   end
 
+  def build_item_list_from_bxa
+  end
+
 end
