@@ -20,6 +20,8 @@ class MainController < ApplicationController
   end
 
   def build_item_list_from_bxa
+    ObtainProductsFromBxaJob.perform_later
+    render json: { message: 'Product list is being built. This process could take some time... Please, do not retry the action.' }
   end
 
 end

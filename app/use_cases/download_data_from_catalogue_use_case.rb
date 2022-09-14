@@ -10,6 +10,8 @@ class DownloadDataFromCatalogueUseCase < ApplicationUseCase
     get_all_catalogue_items
     #save_temp_file
     update_catalogue_items
+    update_date_on_settings
+
     response
   end
 
@@ -84,6 +86,10 @@ class DownloadDataFromCatalogueUseCase < ApplicationUseCase
 
   def elapsed_time
     @elapsed_time = Time.now - @start_time
+  end
+
+  def update_date_on_settings
+    Setting.update('last_bxa_products_update', Time.now)
   end
 
   def response
