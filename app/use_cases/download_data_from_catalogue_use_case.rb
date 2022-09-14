@@ -56,20 +56,19 @@ class DownloadDataFromCatalogueUseCase < ApplicationUseCase
   def mapped_catalogue_items
     @catalogue_items.map do |item|
       {
-        id: item['bxa_id'],
-        name: item['name'],
+        bxa_id: item['id'],
         description: item['description'],
-        unit_cost: item['unit_cost'],
-        catalogue_description: item['catalogue_description'],
+        unit_cost: item['unitCost'].to_f,
+        catalogue_description: item['catalogueDescription'],
         category: item['category'],
-        cost_item_type: item['cost_item_type'],
-        catalogue_id: item['catalogue_id'],
-        catalogue_category_id: item['catalogue_category_id'],
-        catalogue_sub_category_id: item['catalogue_sub_category_id'],
-        image_url: item['image_url'],
-        is_recipe: item['is_recipe'],
-        sub_category: item['sub_category'],
-        supplier_code: item['supplier_code'],
+        cost_item_type: item['costItemType'],
+        catalogue_id: item['catalogueId'],
+        catalogue_category_id: item['catalogueCategoryId'],
+        catalogue_sub_category_id: item['catalogueSubCategoryId'],
+        image_url: item['imageUrl'],
+        is_recipe: item['isRecipe'],
+        sub_category: item['subCategory'],
+        supplier_code: item['supplierCode'],
         uom: item['uom'],
       }
     end
