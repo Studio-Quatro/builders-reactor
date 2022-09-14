@@ -9,7 +9,7 @@ class DownloadProductsListUseCase < ApplicationUseCase
     start_timer
     connect_with_webpage
     retrieve_products
-    save_temp_file
+    #save_temp_file
     response
   end
 
@@ -31,14 +31,14 @@ class DownloadProductsListUseCase < ApplicationUseCase
     @products_list = BuildersWorld::ProductsDownloader.call({ connection: @connection })
   end
 
-  def save_temp_file
-    @file_size = Utils::FilePersistor.new.save('builders_products_list', @products_list)
-  end
+  #def save_temp_file
+    #@file_size = Utils::FilePersistor.new.save('builders_products_list', @products_list)
+  #end
 
   def response
     {
-      file_size: @file_size,
-      file_path: '/tmp/builders_products_list',
+      #file_size: @file_size,
+      #file_path: '/tmp/builders_products_list',
       date: now,
       elapsed_time: now - @start_time
     }
