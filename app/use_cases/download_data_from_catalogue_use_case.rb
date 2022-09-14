@@ -33,6 +33,7 @@ class DownloadDataFromCatalogueUseCase < ApplicationUseCase
       first_item = page * 100
       last_item = first_item + 99
       current_page = get_catalogue_items(first_item, last_item)['items']
+      binding.pry
       @catalogue_items.concat(current_page)
       puts "Page #{page} done. From #{first_item} to #{last_item}. Total #{@catalogue_items.count}"
       break if current_page.count < 100
