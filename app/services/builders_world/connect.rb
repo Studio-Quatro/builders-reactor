@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require 'woocommerce_api'
-CREDENTIALS = Rails.application.credentials.woocommerce
+WC_CREDENTIALS = Rails.application.credentials.woocommerce
 module BuildersWorld
   # Class to connect Woocommerce shop from BuildersWorld website
   # You could build a connection using something like these:
@@ -10,9 +10,9 @@ module BuildersWorld
     def initialize(params = {})
       super()
       @params = params
-      @params[:domain] ||= CREDENTIALS.domain
-      @params[:consumer_key] ||= CREDENTIALS.consumer_key
-      @params[:consumer_secret] ||= CREDENTIALS.consumer_secret
+      @params[:domain] ||= WC_CREDENTIALS.domain
+      @params[:consumer_key] ||= WC_CREDENTIALS.consumer_key
+      @params[:consumer_secret] ||= WC_CREDENTIALS.consumer_secret
     end
 
     def call
