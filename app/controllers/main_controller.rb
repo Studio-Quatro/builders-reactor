@@ -10,13 +10,13 @@ class MainController < ApplicationController
   # Enqueue ObtainProductsFromBwJob and respond with a message
   def build_product_list
     ObtainProductsFromBwJob.perform_later
-    render json: { message: 'Product list is being built' }
+    render json: { message: 'Product list is being built. This process could take some time... Please, do not retry the action.' }
   end
 
   # Enqueue a job to download product categories from WooCommerce
   def build_category_list
     ObtainCategoriesFromBwJob.perform_later
-    render json: { message: 'Categories list is being built' }
+    render json: { message: 'Categories list is being built. This process could take some time... Please, do not retry the action.' }
   end
 
 end
