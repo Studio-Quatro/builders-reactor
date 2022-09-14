@@ -7,9 +7,10 @@ class MainController < ApplicationController
     @last_categories_update = Setting.last_categories_update
   end
 
-  # Enqueue a job to download products from WooCommerce
+  # Enqueue ObtainProductsFromBwJob and respond with a message
   def build_product_list
-    DownloadProductsListUseCase.new.call
+    ObtainProductsFromBwJob.perform_later
+    render json: { message: 'Product list is being built' }
   end
 
   # Enqueue a job to download product categories from WooCommerce
