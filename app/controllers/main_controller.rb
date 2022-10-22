@@ -5,16 +5,25 @@ class MainController < ApplicationController
   def index
     @last_products_update = Setting.last_products_update
     @last_categories_update = Setting.last_categories_update
+    @last_bxa_products_update = Setting.last_bxa_products_update
+    @last_bxa_categories_update = Setting.last_bxa_categories_update
   end
 
-  # Enqueue a job to download products from WooCommerce
+  # Enqueue ObtainProductsFromBwJob and respond with a message
   def build_product_list
-    DownloadProductsListUseCase.new.call
+    ObtainProductsFromBwJob.perform_later
+    render json: { message: 'Product list is being built. This process could take some time... Please, do not retry the action.' }
   end
 
   # Enqueue a job to download product categories from WooCommerce
   def build_category_list
-    BuildersWorld::CategoriesDownloader.call({connection: BuildersWorld::Connect.call})
+    ObtainCategoriesFromBwJob.perform_later
+    render json: { message: 'Categories list is being built. This process could take some time... Please, do not retry the action.' }
+  end
+
+  def build_item_list_from_bxa
+    ObtainProductsFromBxaJob.perform_later
+    render json: { message: 'Product list is being built. This process could take some time... Please, do not retry the action.' }
   end
 
 end
