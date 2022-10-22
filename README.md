@@ -11,6 +11,13 @@
 - Create database with rails db:create.
 - Run migrations with rails db:migrate.
 
+## Env variables
+
+To login:
+
+    ADMIN_USERNAME=
+    ADMIN_PASSWORD=
+
 ## Description
 
 This repository stores a microservice to keep two external services via API Rest

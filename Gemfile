@@ -36,6 +36,7 @@ group :development, :test do
   gem 'webmock'
   gem 'guard'
   gem 'simplecov'
+  gem 'dotenv-rails'
 end
 
 
