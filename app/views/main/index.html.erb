@@ -21,6 +21,28 @@
     </div>
     </div>
   </div>
+  <div class="card w-96 bg-base-100 shadow-xl my-4">
+    <div class="card-body">
+    <h2 class="card-title">Obtain data of products from Buildxact</h2>
+    <p>Last updated: <%= @last_bxa_products_update %></p>
+    <div class="card-actions justify-end">
+      <%= link_to "Obtain data", build_item_list_from_bxa_path, class: "btn btn-primary" %>
+      <%= link_to "Open categories list", buildxact_items_path, class: "btn btn-primary" %>
+    </div>
+    </div>
+  </div>
+  <div class="card w-96 bg-base-100 shadow-xl my-4">
+    <div class="card-body">
+    <h2 class="card-title">Obtain data of categories from Buildxact</h2>
+    <p>Last updated: <%= @last_bxa_categories_update %></p>
+    <div class="card-actions justify-end">
+      <%= link_to "Obtain data", "build_categories_list_from_bxa", class: "btn btn-primary" %>
+      <%= link_to "Open categories list", "buildxact_categories_path", class: "btn btn-primary" %>
+    </div>
+    </div>
+  </div>
+
+
 
   <div class="card w-96 bg-primary text-primary-content my-4">
   <div class="card-body">

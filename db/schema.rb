@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_11_211338) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_14_121034) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -50,6 +50,26 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_11_211338) do
     t.string "item_count"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "buildxact_items", force: :cascade do |t|
+    t.string "catalogue_description"
+    t.string "category"
+    t.string "cost_item_type"
+    t.string "description"
+    t.string "catalogue_id"
+    t.string "catalogue_category_id"
+    t.string "bxa_id"
+    t.string "catalogue_sub_category_id"
+    t.string "image_url"
+    t.boolean "is_recipe"
+    t.string "sub_category"
+    t.string "supplier_code"
+    t.float "unit_cost"
+    t.string "uom"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["bxa_id"], name: "index_buildxact_items_on_bxa_id", unique: true
   end
 
   create_table "categories", force: :cascade do |t|
