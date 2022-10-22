@@ -1,0 +1,44 @@
+<!-- Make a tailwind container to show a long table -->
+<div class="container mx-auto">
+      
+        <!-- Make a table for products with fields: id, category, cost_item_type, description, catalogue_category_id, external_id, catalogue_sub_category_id, image_url is_recipe, sub_category, supplier_code, unit_cost and uom -->
+        <table class="table-fixed">
+            <thead>
+                <tr>
+                    <th class="px-4 py-2">id</th>
+                    <th class="px-4 py-2">category</th>
+                    <th class="px-4 py-2">cost_item_type</th>
+                    <th class="px-4 py-2">description</th>
+                    <th class="px-4 py-2">catalogue_category_id</th>
+                    <th class="px-4 py-2">external_id</th>
+                    <th class="px-4 py-2">catalogue_sub_category_id</th>
+                    <th class="px-4 py-2">image_url</th>
+                    <th class="px-4 py-2">is_recipe</th>
+                    <th class="px-4 py-2">sub_category</th>
+                    <th class="px-4 py-2">supplier_code</th>
+                    <th class="px-4 py-2">unit_cost</th>
+                    <th class="px-4 py-2">uom</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% @products.each do |product| %>
+                    <tr>
+                        <td class="border px-4 py-2"><%= product.id %></td>
+                        <td class="border px-4 py-2"><%= product.category %></td>
+                        <td class="border px-4 py-2"><%= product.cost_item_type %></td>
+                        <td class="border px-4 py-2"><%= product.description %></td>
+                        <td class="border px-4 py-2"><%= product.catalogue_category_id %></td>
+                        <td class="border px-4 py-2"><%= product.external_id %></td>
+                        <td class="border px-4 py-2"><%= product.catalogue_sub_category_id %></td>
+                        <td class="border px-4 py-2"><%= product.image_url %></td>
+                        <td class="border px-4 py-2"><%= product.is_recipe %></td>
+                        <td class="border px-4 py-2"><%= product.sub_category %></td>
+                        <td class="border px-4 py-2"><%= product.supplier_code %></td>
+                        <td class="border px-4 py-2"><%= product.unit_cost %></td>
+                        <td class="border px-4 py-2"><%= product.uom %></td>
+                    </tr>
+                <% end %>
+            </tbody>
+        </table>
+
+</div>

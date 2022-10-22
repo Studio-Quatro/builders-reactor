@@ -1,0 +1,27 @@
+# frozen_string_literal: true
+
+<% spaces = ''; for mod in @modules %><%= spaces %>module <%= mod.camelize %><% spaces += '  ' %>
+<% end %><%= spaces %># Replace this line with documentation for this use case.
+<%= spaces %># @param [Hash] params
+<%= spaces %># @option params [Type] :name_of_param Description of param.
+<%= spaces %>class <%= "#{class_name}UseCase" %>
+
+<%= spaces %>  def initialize(params)
+<%= spaces %>    @params = params
+<%= spaces %>  end
+
+<%= spaces %>  # @return Replace with return.
+<%= spaces %>  def call
+<%= spaces %>    # Insert pre-conditions here.<% if methods.present? %><% for method in methods %>
+<%= spaces %>    <%= method %><% end %><% end %>
+<%= spaces %>    # Insert post-conditions here.
+<%= spaces %>  end
+
+  <% if methods.present? %><%= spaces %>private <% end %>
+  <% for method in methods %>
+<%= spaces %>  def <%= method %>
+<%= spaces %>    # Call other classes as services or jobs. 
+<%= spaces %>  end
+<% end %><%= spaces %>end
+<% @modules.count.times do %><% spaces = spaces.chop.chop %><%= spaces %>end
+<% end %>

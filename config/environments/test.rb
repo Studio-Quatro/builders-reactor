@@ -1,9 +1,12 @@
+# frozen_string_literal: true
+
 require "active_support/core_ext/integer/time"
 
 # The test environment is used exclusively to run your application's
 # test suite. You never need to work with it otherwise. Remember that
 # your test database is "scratch space" for the test suite and is wiped
 # and recreated between test runs. Don't rely on the data there!
+Dir[Rails.root.join('spec', 'support', '**', '*.rb')].each { |f| require f }
 
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
@@ -15,7 +18,7 @@ Rails.application.configure do
   # this probably isn't necessary. It's a good idea to do in a continuous integration
   # system, or in some way before deploying your code.
   config.eager_load = ENV["CI"].present?
-
+  config.autoload_paths += ["#{Rails.root}/app/services/**/*.rb"]
   # Configure public file server for tests with Cache-Control for performance.
   config.public_file_server.enabled = true
   config.public_file_server.headers = {

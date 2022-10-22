@@ -1,0 +1,13 @@
+# frozen_string_literal: true
+
+require 'rails_helper'
+
+RSpec.describe(<%= @modules_path %><%= class_name %>, type: :service) do<% if methods.present?%><% for method in methods %>
+  describe '#<%= method %>'
+<% end %><% else %>
+  describe '#call' do
+    context 'when the parameters are correct'
+    context 'when missing parameters'
+    context 'when raise an error'
+  end
+<% end %>end
