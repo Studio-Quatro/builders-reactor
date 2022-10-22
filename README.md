@@ -1,5 +1,16 @@
 # README
 
+## Versions
+
+- Ruby 3.1
+- Rails 7.0.3
+
+## Instructions to run locally
+
+- Bundle dependencies.
+- Create database with rails db:create.
+- Run migrations with rails db:migrate.
+
 ## Description
 
 This repository stores a microservice to keep two external services via API Rest
@@ -43,3 +54,4 @@ process less than 4 hours.## Versions
 ## Gem to configure some cositas
 
 https://github.com/huacnlee/rails-settings-cached
+
