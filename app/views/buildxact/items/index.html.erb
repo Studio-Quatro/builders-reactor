@@ -3,6 +3,7 @@
     <thead>
       <tr>
         <th class="px-4 py-2">id</th>
+        <th class="px-4 py-2">external_id</th>
         <th class="px-4 py-2">catalogue_description</th>
         <th class="px-4 py-2">category</th>
         <th class="px-4 py-2">cost_item_type</th>
@@ -22,11 +23,12 @@
       <% @items.each do |item| %>
         <tr>
           <td class="border px-4 py-2"><%= item.id %></td>
-          <td class="border px-4 py-2">1<%= 'non-mapped'  %></td>
-          <td class="border px-4 py-2">2<%= 'non-mapped'  %></td>
+          <td class="border px-4 py-2"><%= item.bxa_id %></td>
+          <td class="border px-4 py-2">1<%= item.catalogue_description  %></td>
+          <td class="border px-4 py-2">2<%= item.category  %></td>
           <td class="border px-4 py-2"><%= item.cost_item_type %></td>
           <td class="border px-4 py-2"><%= item.description %></td>
-          <td class="border px-4 py-2"><%= 'non-mapped' %></td>
+          <td class="border px-4 py-2"><%= item.catalogue_id %></td>
           <td class="border px-4 py-2"><%= item.catalogue_category_id %></td>
           <td class="border px-4 py-2"><%= item.catalogue_sub_category_id %></td>
           <td class="border px-4 py-2"><%= item.image_url %></td>

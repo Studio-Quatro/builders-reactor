@@ -1,6 +1,6 @@
 class Buildxact::ItemsController < ApplicationController
   def index
-    @items = Item.all
+    @items = Buildxact::Item.all
   rescue NoMethodError => e
     # Ignore and keep going
 
