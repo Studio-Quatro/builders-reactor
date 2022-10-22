@@ -1,0 +1,43 @@
+<div class="container mx-auto">
+  <table class="table-fixed">
+    <thead>
+      <tr>
+        <th class="px-4 py-2">id</th>
+        <th class="px-4 py-2">catalogue_description</th>
+        <th class="px-4 py-2">category</th>
+        <th class="px-4 py-2">cost_item_type</th>
+        <th class="px-4 py-2">description</th>
+        <th class="px-4 py-2">catalogue_id</th>
+        <th class="px-4 py-2">catalogue_category_id</th>
+        <th class="px-4 py-2">catalogue_sub_category_id</th>
+        <th class="px-4 py-2">image_url</th>
+        <th class="px-4 py-2">is_recipe</th>
+        <th class="px-4 py-2">supplier_code</th>
+        <th class="px-4 py-2">unit_cost</th>
+        <th class="px-4 py-2">uom</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Loop through the items and display the data in the table -->
+      <% @items.each do |item| %>
+        <tr>
+          <td class="border px-4 py-2"><%= item.id %></td>
+          <td class="border px-4 py-2">1<%= 'non-mapped'  %></td>
+          <td class="border px-4 py-2">2<%= 'non-mapped'  %></td>
+          <td class="border px-4 py-2"><%= item.cost_item_type %></td>
+          <td class="border px-4 py-2"><%= item.description %></td>
+          <td class="border px-4 py-2"><%= 'non-mapped' %></td>
+          <td class="border px-4 py-2"><%= item.catalogue_category_id %></td>
+          <td class="border px-4 py-2"><%= item.catalogue_sub_category_id %></td>
+          <td class="border px-4 py-2"><%= item.image_url %></td>
+          <td class="border px-4 py-2"><%= item.is_recipe %></td>
+          <td class="border px-4 py-2"><%= item.supplier_code %></td>
+          <td class="border px-4 py-2"><%= item.unit_cost %></td>
+          <td class="border px-4 py-2"><%= item.uom %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+ 

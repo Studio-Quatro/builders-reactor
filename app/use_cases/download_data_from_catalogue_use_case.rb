@@ -89,7 +89,7 @@ class DownloadDataFromCatalogueUseCase < ApplicationUseCase
   end
 
   def update_date_on_settings
-    Setting.update('last_bxa_products_update', Time.now)
+    Setting.last_bxa_products_update = Time.now
   end
 
   def response
