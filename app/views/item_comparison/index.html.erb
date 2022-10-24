@@ -1,0 +1,23 @@
+<div class="container mx-auto">
+  <!-- Make a table for ItemComparison with the following fields: id, supplier_code, status, date_of_evaluation -->
+  <table class="table-auto">
+    <thead>
+      <tr>
+        <th class="px-4 py-2">ID</th>
+        <th class="px-4 py-2">Supplier Code</th>
+        <th class="px-4 py-2">Status</th>
+        <th class="px-4 py-2">Date of Evaluation</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @items.each do |item| %>
+        <tr>
+          <td class="border px-4 py-2"><%= item.id %></td>
+          <td class="border px-4 py-2"><%= item.supplier_code %></td>
+          <td class="border px-4 py-2"><%= item.status %></td>
+          <td class="border px-4 py-2"><%= item.date_of_evaluation %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

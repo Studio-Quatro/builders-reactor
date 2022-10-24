@@ -17,4 +17,9 @@ Rails.application.routes.draw do
   namespace :buildxact do
     resources :items, only: [:index]
   end
+  resources :item_comparison, only: [:index] do
+    collection do
+      get 'compare'
+    end
+  end
 end
