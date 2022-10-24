@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class ItemListComparer < ApplicationService
+class Comparator::ItemListComparer < ApplicationService
   def call 
     require_bw_items
     require_bxa_items
@@ -27,6 +27,7 @@ class ItemListComparer < ApplicationService
     ItemComparer.new({origin_item: , target_item: }).same?
   end
 
+  # TODO: Refactor to inject origin_items and target_items as params
   # Source
   def require_bw_items
     @bw_items = Item.all

@@ -6,4 +6,5 @@ class Setting < RailsSettings::Base
   field :last_products_update
   field :last_bxa_products_update
   field :last_bxa_categories_update
+  field :last_products_comparison
 end

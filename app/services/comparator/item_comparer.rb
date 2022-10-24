@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class ItemComparer < ApplicationService
+class Comparator::ItemComparer < ApplicationService
   def initialize(params)
     @target_item = params[:target_item]
     @origin_item = params[:origin_item]
