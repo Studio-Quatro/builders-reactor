@@ -1,8 +1,9 @@
 # frozen_string_literal: true
 
-class MakeListOfChanges < ApplicationUseCase
+class MakeListOfChangesUseCase < ApplicationUseCase
   def call
     # retrieve_data
+    set_time
     make_changes_list
     map_changes_list
     save_changes_list
@@ -12,7 +13,7 @@ class MakeListOfChanges < ApplicationUseCase
   private
   
   def make_changes_list
-    @supplier_codes_to_change = ItemListComparer.call
+    @supplier_codes_to_change = Comparator::ItemListComparer.call
   end
 
   def set_time
@@ -24,7 +25,7 @@ class MakeListOfChanges < ApplicationUseCase
       {
         supplier_code: supplier_code,
         status: 'pending',
-        date_of_evaluation: @time
+        date_of_evaluation: @time,
         created_at: @time,
         updated_at: @time
       }

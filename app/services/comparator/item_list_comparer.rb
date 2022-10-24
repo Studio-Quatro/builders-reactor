@@ -13,7 +13,7 @@ class Comparator::ItemListComparer < ApplicationService
   def make_changes_list
     @bw_items.each do |bw_item|
       bxa_item = @bxa_items.find_by(supplier_code: bw_item.supplier_code)
-      unless bxa_item || compare_items(bw_item, bxa_item)
+      unless bxa_item && compare_items(bw_item, bxa_item)
         changes_list << bw_item.supplier_code
       end
     end
@@ -24,7 +24,7 @@ class Comparator::ItemListComparer < ApplicationService
   end
 
   def compare_items(origin_item, target_item)
-    ItemComparer.new({origin_item: , target_item: }).same?
+    Comparator::ItemComparer.new({origin_item: , target_item: }).same?
   end
 
   # TODO: Refactor to inject origin_items and target_items as params
