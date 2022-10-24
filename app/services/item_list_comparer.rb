@@ -1,19 +1,23 @@
 # frozen_string_literal: true
 
-class ItemListComparer
+class ItemListComparer < ApplicationService
   def call 
     require_bw_items
     require_bxa_items
+    make_changes_list
+    changes_list 
+  end
+
+  private
+
+  def make_changes_list
     @bw_items.each do |bw_item|
       bxa_item = @bxa_items.find_by(supplier_code: bw_item.supplier_code)
       unless bxa_item || compare_items(bw_item, bxa_item)
         changes_list << bw_item.supplier_code
       end
     end
-    changes_list 
   end
-
-  private
 
   def changes_list
     @changes_list ||= []
