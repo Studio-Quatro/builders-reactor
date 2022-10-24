@@ -1,0 +1,2 @@
+class ItemComparison < ApplicationRecord
+end
