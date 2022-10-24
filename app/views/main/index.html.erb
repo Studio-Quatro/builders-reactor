@@ -46,10 +46,11 @@
 
   <div class="card w-96 bg-primary text-primary-content my-4">
   <div class="card-body">
-    <h2 class="card-title">Process changes</h2>
-    <p>Last updated: __</p>
+    <h2 class="card-title">Make List of changes</h2>
+    <p>Last updated: <%= @last_changes_date %></p>
     <div class="card-actions justify-end">
-      <button class="btn">Process now</button>
+      <%= link_to "Make list", compare_item_comparison_index_path, class: "btn btn-primary" %>
+      <%= link_to "Open changes list", item_comparison_index_path, class: "btn btn-primary" %>
     </div>
   </div>
   </div>
