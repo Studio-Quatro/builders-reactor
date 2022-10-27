@@ -30,6 +30,10 @@ class MainController < ApplicationController
     render json: { message: 'Product list is being built. This process could take some time... Please, do not retry the action.' }
   end
 
+  def build_categories_list_from_bxa
+    render json: DownloadDataFromCategoriesUseCase.call
+  end
+
   def make_list_of_changes
     MakeListOfChangesJob.perform_later
     render json: { message: 'Changes list is being built. This process could take some time... Please, do not retry the action.' }

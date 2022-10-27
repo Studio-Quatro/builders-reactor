@@ -1,0 +1,25 @@
+<div class="container mx-auto">
+    <table class="table-fixed">
+        <thead>
+            <tr>
+                <th class="px-4 py-2">Id</th>
+                <th class="px-4 py-2">Category name</th>
+                <th class="px-4 py-2">Category id</th>
+                <th class="px-4 py-2">Subcategory name</th>
+                <th class="px-4 py-2">Subcategory id</th>
+                <th class="px-4 py-2">Item Count</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @categories.each do |category| %>
+                <tr>
+                    <td class="border px-4 py-2"><%= category.id %></td>
+                    <td class="border px-4 py-2"><%= category.name %></td>
+                    <td class="border px-4 py-2"><%= category.category_id %></td>
+                    <td class="border px-4 py-2"><%= category.subcategory %></td>
+                    <td class="border px-4 py-2"><%= category.subcategory_id %></td>
+                    <td class="border px-4 py-2"><%= category.item_count %></td>
+                </tr>
+            <% end %>
+        </tbody>
+</div>
