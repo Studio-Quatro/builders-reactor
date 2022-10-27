@@ -50,11 +50,11 @@ class DownloadDataFromCategoriesUseCase < ApplicationUseCase
   end
 
   def update_categories
-    Buildxact::Category.upsert_all(mapped_categories.uniq, unique_by: :category_id)
+    Buildxact::Category.upsert_all(mapped_categories.uniq, unique_by: :subcategory_id)
   end
 
   def elapsed_time
-    @elapsed_time = Time.now - @start_time
+    Time.now - @start_time
   end
 
   def update_date_on_settings
@@ -63,8 +63,8 @@ class DownloadDataFromCategoriesUseCase < ApplicationUseCase
 
   def response
     {
-      elapsed_time: @elapsed_time,
-      catalogue_items: @catalogue_items.count
+      elapsed_time: elapsed_time,
+      catalogue_items: @categories.count
     }
   end
 end
