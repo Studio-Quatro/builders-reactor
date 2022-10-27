@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  get 'event/index'
   get 'categories/index'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -24,4 +25,5 @@ Rails.application.routes.draw do
       get 'compare'
     end
   end
+  resources :events, only: [:index]
 end
