@@ -3,10 +3,13 @@
 # Main controller
 class MainController < ApplicationController
   def index
+    # Woocommerce
     @last_products_update = Setting.last_products_update
     @last_categories_update = Setting.last_categories_update
+    # Buildxact
     @last_bxa_products_update = Setting.last_bxa_products_update
     @last_bxa_categories_update = Setting.last_bxa_categories_update
+    # Processing of changes
     @last_changes_list = Setting.last_products_comparison
   end
 
