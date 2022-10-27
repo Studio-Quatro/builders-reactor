@@ -3,7 +3,7 @@
   <!-- Generate a feed of events -->
   <div class="flex flex-wrap">
     <% @events.each do |event| %>
-      <div class="w-1/3 p-4">
+      <div class="p-4">
         <div class="bg-white rounded-lg shadow-lg p-4">
           <!-- If event_type is 'error', show a red border -->
           <% if event.event_type == 'error' %>
@@ -13,9 +13,11 @@
             <div class="border-l-4 border-green-500">
               <h2 class="font-bold text-xl"><%= event.event_type%></h2>
           <% end %>
+            </div>
           <p class="text-gray-700 text-base"><%= event.event_message%></p>
           <p class="text-gray-700 text-base"><%= event.created_at%></p>
         </div>
       </div>
     <% end %>
+  </div>
 </div>
