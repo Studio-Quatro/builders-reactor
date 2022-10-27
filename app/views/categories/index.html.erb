@@ -1,7 +1,5 @@
-
 <div class="container mx-auto">
-  <!-- Make a table for Categories with the following fields: id, wc_id, slug, name, parent_id  -->
-  <table class="table-auto">
+  <table class="table-fixed">
     <thead>
       <tr>
         <th class="px-4 py-2">ID</th>
@@ -12,7 +10,6 @@
       </tr>
     </thead>
     <tbody>
-     <% # Loop through the categories %>
       <% @categories.each do |category| %>
         <tr>
           <td class="border px-4 py-2"><%= category.id %></td>
@@ -23,7 +20,6 @@
         </tr>
       <% end %>
     </tbody>
-
   </table>
 </div>
 

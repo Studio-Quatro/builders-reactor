@@ -11,11 +11,13 @@ Rails.application.routes.draw do
   get 'build_category_list', to: 'main#build_category_list'
 
   get 'build_item_list_from_bxa', to: 'main#build_item_list_from_bxa'
+  get 'build_categories_list_from_bxa', to: 'main#build_categories_list_from_bxa'
   
   resources :products, only: [:index]
   resources :categories, only: [:index]
   namespace :buildxact do
     resources :items, only: [:index]
+    resources :categories, only: [:index]
   end
   resources :item_comparison, only: [:index] do
     collection do
