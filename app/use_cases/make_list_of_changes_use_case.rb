@@ -8,6 +8,7 @@ class MakeListOfChangesUseCase < ApplicationUseCase
     map_changes_list
     save_changes_list
     set_last_update
+    store_event
   end
 
   private
@@ -38,5 +39,12 @@ class MakeListOfChangesUseCase < ApplicationUseCase
 
   def set_last_update
     Setting.last_products_comparison = @time
+  end
+
+  def store_event
+    Event.create(
+      event_type: 'info',
+      event_message: "Changes list created. Elapsed time: #{elapsed_time}"
+    )
   end
 end

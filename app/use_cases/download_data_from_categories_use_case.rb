@@ -8,6 +8,7 @@ class DownloadDataFromCategoriesUseCase < ApplicationUseCase
     get_categories
     update_categories
     update_date_on_settings
+    store_event
 
     response
   end
@@ -59,6 +60,13 @@ class DownloadDataFromCategoriesUseCase < ApplicationUseCase
 
   def update_date_on_settings
     Setting.last_bxa_categories_update = Time.now
+  end
+
+  def store_event
+    Event.create(
+      event_type: 'info',
+      event_message: "Categories updated. Elapsed time: #{elapsed_time}"
+    )
   end
 
   def response

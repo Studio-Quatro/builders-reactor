@@ -11,6 +11,7 @@ class DownloadDataFromCatalogueUseCase < ApplicationUseCase
     #save_temp_file
     update_catalogue_items
     update_date_on_settings
+    store_event
 
     response
   end
@@ -80,9 +81,12 @@ class DownloadDataFromCatalogueUseCase < ApplicationUseCase
     Buildxact::Item.upsert_all(mapped_catalogue_items.uniq, unique_by: :bxa_id)
   end
 
-  #def save_temp_file
-    #@file_size = Utils::FilePersistor.new.save('buildxact_catalogue', @all_catalogue_items)
-  #end
+  def store_event
+    Event.create(
+      event_type: 'info',
+      event_message: "Catalogue items updated. Elapsed time: #{elapsed_time}"
+    )
+  end
 
   def elapsed_time
     @elapsed_time = Time.now - @start_time

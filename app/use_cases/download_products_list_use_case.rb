@@ -9,7 +9,7 @@ class DownloadProductsListUseCase < ApplicationUseCase
     start_timer
     connect_with_webpage
     retrieve_products
-    #save_temp_file
+    store_event
     response
   end
 
@@ -34,6 +34,13 @@ class DownloadProductsListUseCase < ApplicationUseCase
   #def save_temp_file
     #@file_size = Utils::FilePersistor.new.save('builders_products_list', @products_list)
   #end
+
+  def store_event
+    Event.create(
+      event_type: 'info',
+      event_message: "Products list downloaded. Elapsed time: #{elapsed_time}"
+    )
+  end
 
   def response
     {
