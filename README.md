@@ -11,6 +11,10 @@
 - Create database with rails db:create.
 - Run migrations with rails db:migrate.
 
+## Deploy on Heroku
+
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+
 ## Env variables
 
 To login:
@@ -79,5 +83,3 @@ https://github.com/huacnlee/rails-settings-cached
 ![image](https://user-images.githubusercontent.com/20209667/203054406-93947e6f-e397-4e64-abc2-057abdb78a75.png)
 
 ![image](https://user-images.githubusercontent.com/20209667/203055260-687e2076-6a33-4850-8d7d-6e3d92218842.png)
-
-![image](https://user-images.githubusercontent.com/20209667/203054076-407ec3b0-41f0-4ad5-9da2-520b83551d14.png)
