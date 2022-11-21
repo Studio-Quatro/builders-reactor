@@ -62,3 +62,22 @@ process less than 4 hours.## Versions
 
 https://github.com/huacnlee/rails-settings-cached
 
+## Files involved on B.L.
+
+![image](https://user-images.githubusercontent.com/20209667/203053632-960592b7-a3a3-4f21-8dd5-c92e110a2852.png)
+
+## Diagrams
+
+![image](https://user-images.githubusercontent.com/20209667/203053961-1231ffe3-f3e0-4e1f-8083-392268f433ab.png)
+
+![image](https://user-images.githubusercontent.com/20209667/203054076-407ec3b0-41f0-4ad5-9da2-520b83551d14.png)
+
+## Architecture
+
+### Layers and design patterns
+
+![image](https://user-images.githubusercontent.com/20209667/203054406-93947e6f-e397-4e64-abc2-057abdb78a75.png)
+
+![image](https://user-images.githubusercontent.com/20209667/203055260-687e2076-6a33-4850-8d7d-6e3d92218842.png)
+
+![image](https://user-images.githubusercontent.com/20209667/203054076-407ec3b0-41f0-4ad5-9da2-520b83551d14.png)
